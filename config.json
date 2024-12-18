@@ -1,0 +1,6 @@
+{
+    "TIME_DEFAULT": 90,
+    "SCORE_BONUS": 5,
+    "GOLD_BONUS_RATE": 20,
+    "BALL_BONUS_RATE": 5
+}
