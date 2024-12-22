@@ -17,6 +17,12 @@ function initializeGame() {
                             scoreBonus: config.SCORE_BONUS,
                             goldBonusRate: config.GOLD_BONUS_RATE,
                             ballBonusRate: config.BALL_BONUS_RATE,
+                            velocityBall: config.VELOCITY_BALL,
+                            minBounceOfBall: config.MIN_BOUNCE_OF_BALL,
+                            maxBounceOfBall: config.MAX_BOUNCE_OF_BALL,
+                            BounceOfWall: config.BOUNCE_OF_WALL,
+                            minDistanceBall: config.MIN_DISTANCE_BALL,
+                            maxDistanceBall: config.MAX_DISTANCE_BALL,
                         },
                     })
                 );
@@ -33,6 +39,7 @@ function initializeGame() {
     });
 
     window.addEventListener("updateTimer", function (event) {
+        
         const data = event.detail;
         // Send the timer string to the parent app
         PlayMixSDK.updateTimerString(data.timerString);
