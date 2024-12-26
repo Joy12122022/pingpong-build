@@ -1,4 +1,4 @@
-System.register(["./dhis.js"], function (e) {
+System.register(["./abc12js.js"], function (e) {
     "use strict";
     return {
         setters: [
