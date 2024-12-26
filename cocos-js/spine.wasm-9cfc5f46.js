@@ -1,4 +1,4 @@
-System.register(["./abcabc.js"], function (t) {
+System.register(["./dhis.js"], function (t) {
     "use strict";
     var e;
     return {

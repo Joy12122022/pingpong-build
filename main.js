@@ -6,28 +6,6 @@ function initializeGame() {
 
     window.addEventListener("gameReady", function () {
         console.log("Game Ready!");
-        fetch("config.json")
-            .then((response) => response.json())
-            .then((config) => {
-                console.log("Config loaded:", config);
-                window.dispatchEvent(
-                    new CustomEvent("setConfig", {
-                        detail: {
-                            timeDefault: config.TIME_DEFAULT,
-                            scoreBonus: config.SCORE_BONUS,
-                            goldBonusRate: config.GOLD_BONUS_RATE,
-                            ballBonusRate: config.BALL_BONUS_RATE,
-                            velocityBall: config.VELOCITY_BALL,
-                            minBounceOfBall: config.MIN_BOUNCE_OF_BALL,
-                            maxBounceOfBall: config.MAX_BOUNCE_OF_BALL,
-                            BounceOfWall: config.BOUNCE_OF_WALL,
-                            minDistanceBall: config.MIN_DISTANCE_BALL,
-                            maxDistanceBall: config.MAX_DISTANCE_BALL,
-                        },
-                    })
-                );
-            })
-            .catch((error) => console.error("Error loading config:", error));
         // Send a 'LOADED' event to the parent app
         PlayMixSDK.sendLoadedEvent();
     });
@@ -39,7 +17,6 @@ function initializeGame() {
     });
 
     window.addEventListener("updateTimer", function (event) {
-        
         const data = event.detail;
         // Send the timer string to the parent app
         PlayMixSDK.updateTimerString(data.timerString);
